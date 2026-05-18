@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #f4f4f4; /* Light grey textured background approximation */
+    --foreground: #111111; /* Almost black text */
+    --primary: #f9a826; /* Orange/yellow accent from design */
+    --primary-foreground: #ffffff;
+    --card: #ffffff;
+    --card-foreground: #111111;
+    --border: rgba(0, 0, 0, 0.1);
+    --muted: #f9f9f9;
+    --muted-foreground: #666666;
+    --accent: rgba(249, 168, 38, 0.1);
+  }
+  
+  /* We remove dark mode specific overrides to keep the clean light look */
+  html.dark {
+    --background: #f4f4f4;
+    --foreground: #111111;
+    --primary: #f9a826;
+    --primary-foreground: #ffffff;
+    --card: #ffffff;
+    --card-foreground: #111111;
+    --border: rgba(0, 0, 0, 0.1);
+    --muted: #f9f9f9;
+    --muted-foreground: #666666;
+    --accent: rgba(249, 168, 38, 0.1);
+  }
+
+  body {
+    background-color: var(--background);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    color: var(--foreground);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    color: var(--primary);
+  }
+}
+
+/* Custom Scrollbar - Colored */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #a200ff;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff007f;
+}
